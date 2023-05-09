@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["montezdesousa <montezdesousa@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastapi = {extras = ["all"], version = "^0.95.1"}
+packaging = "^23.1"
+matplotlib = "^3.7.1"
+numpy = "^1.24.3"
+pandas = "^2.0.1"
+pillow = "^9.5.0"
+requests = "^2.29.0"
+scikit-learn = "^1.2.2"
+sqlalchemy = "^2.0.11"
+tqdm = "^4.65.0"
+validators = "^0.20.0"
+psycopg2-binary = "^2.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

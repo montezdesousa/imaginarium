@@ -1,0 +1,14 @@
+fastapi[all]==0.95.1
+tensorflow==2.11.0
+joblib==1.2.0
+matplotlib==3.7.1
+numpy==1.24.3
+pandas==2.0.1
+Pillow==9.5.0
+requests==2.29.0
+scikit_learn==1.2.2
+SQLAlchemy==2.0.11
+tqdm==4.65.0
+validators==0.20.0
+psycopg2-binary==2.9.6
+packaging==23.1

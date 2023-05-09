@@ -1,0 +1,7 @@
+*.pyc
+*.ipynb
+*.pkl
+*.env
+.vscode
+backend/notebooks
+backend/images
