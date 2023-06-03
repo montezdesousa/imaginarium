@@ -16,31 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/search")
-async def search(
-    q: str,
-):
-    if q == "undefined":
-        return {"results": []}
-    if validators.url(q):
-        try:
-            r = get_result_urls(q, "master_db")
-            if r:
-                results = [
-                    {"id": str(i), "urls": {"img": img_url, "page": page_url}, "title": page_title} for i, (img_url, page_url, page_title) in enumerate(r)
-                ]
-                return {"results": results}
-        except Exception:
-            return {"results": ERROR}
-    return {"results": INVALID_URL}
-
-
 ERROR = [
     {
         "id": "b29z0iltxk4",
@@ -62,3 +37,33 @@ INVALID_URL = [
         "title": "Invalid URL",
     }
 ]
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
+@app.get("/search")
+async def search(
+    q: str,
+):
+    if q == "undefined":
+        return {"results": []}
+    if validators.url(q):
+        try:
+            r = get_result_urls(q, "master_db")
+            if r:
+                results = [
+                    {"id": str(i), "urls": {"img": img_url, "page": page_url}, "title": page_title} for i, (img_url, page_url, page_title) in enumerate(r)
+                ]
+                return {"results": results}
+        except Exception as e:
+            print(e)
+            return {"results": ERROR}
+    return {"results": INVALID_URL}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", reload=True)

@@ -28,5 +28,5 @@ if __name__ == "__main__":
     start = time.time()
     train_and_pickle(X, f"knn_{table}.pkl", n_neighbors=200)
     end = time.time()
-    elapsed = round(end - start, 2)
-    print(f"Training complete {elapsed} seconds.")
+    elapsed = end - start
+    print(f"Training complete {elapsed}.")
