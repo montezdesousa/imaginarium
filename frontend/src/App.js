@@ -97,11 +97,7 @@ const App = () => {
             <div className="results">
               <div className="results__title">
                 {img && res.length === 0 ? (
-                  <div className="spinner">
-                    <div className="bounce1"></div>
-                    <div className="bounce2"></div>
-                    <div className="bounce3"></div>
-                  </div>
+                  <div className="spinner">Esta funcionalidade está em manutenção e será reposta em breve. Obrigado!</div>
                 ) : (
                   <></>
                 )}
