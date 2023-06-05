@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from sqlalchemy.orm import sessionmaker, declarative_base
 import sqlalchemy as db
 
@@ -86,7 +86,7 @@ def get_convolution_from_ids(ids: List[int], table: str) -> List[str]:
     return [[float(i) for i in row] for row in convolution]
 
 
-def get_all_convolution(table: str) -> List[str]:
+def get_all_convolution(table: str, limit: Optional[int] = None) -> List[str]:
     """Get all the images from the database sorted by ascending id
 
     Returns
@@ -100,7 +100,11 @@ def get_all_convolution(table: str) -> List[str]:
 
     Session = sessionmaker(bind=S().engine)
     session = Session()
-    result = session.query(db_table).order_by(db.asc(db_table.id)).all()
+    if limit:
+        ids = list(range(limit))
+        result = session.query(db_table).order_by(db.asc(db_table.id)).filter(db_table.id.in_(ids))
+    else:
+        result = session.query(db_table).order_by(db.asc(db_table.id)).all()
     convolution = [row.convolution.decode().split(",") for row in result]
     data = [[float(i) for i in row] for row in convolution]
     return data
