@@ -1,7 +1,8 @@
+import gzip
 import os
+import pickle
 import sys
 from typing import List, Tuple
-import joblib
 import matplotlib.pyplot as plt
 
 # INTERNAL IMPORTS
@@ -78,7 +79,9 @@ def get_neighbors(url: str, knn_file: str) -> Tuple[List[float], List[int]]:
         The number of neighbors to plot, by default 8
     """
     current_dir = os.path.abspath(os.path.dirname(__file__))
-    knn = joblib.load(os.path.join(current_dir, knn_file))
+    with gzip.open(os.path.join(current_dir, knn_file), 'rb') as f:
+        knn = pickle.load(f)
+
     model = create_model(input_shape=[IMAGE_WIDTH, IMAGE_HEIGHT, 3])
     X_conv_2d = get_img_features(url, model)
     if len(X_conv_2d) > 0:

@@ -1,5 +1,7 @@
+import gzip
+import os
+import pickle
 import sys
-import joblib
 import time
 from sklearn.neighbors import NearestNeighbors
 
@@ -18,7 +20,9 @@ def train_and_pickle(X, file, n_neighbors=20, n_jobs=8, algorithm="ball_tree"):
     """
     knn = NearestNeighbors(n_neighbors=n_neighbors, n_jobs=n_jobs, algorithm=algorithm)
     knn.fit(X)
-    joblib.dump(knn, file)
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    with gzip.open(os.path.join(current_dir, file), 'wb') as f:
+        pickle.dump(knn, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 if __name__ == "__main__":
