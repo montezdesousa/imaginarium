@@ -15,7 +15,7 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Load secrets
-RUN --mount=type=secret,id=_env,dst=./.env cat ./.env
+RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat /etc/secrets/.env > ${APP_HOME}/.env
 RUN ls
 
 # Train the model
