@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Train the model
 RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat /etc/secrets/.env
+RUN pwd
+RUN ls
 RUN ["python", "-m", "engine.train_knn"]
 
 # As an example here we're running the web service with one worker on uvicorn.
