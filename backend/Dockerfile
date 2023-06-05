@@ -15,6 +15,7 @@ COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Train the model
+COPY train_knn.py ./engine
 RUN ["python", "-m", "engine.train_knn"]
 
 # As an example here we're running the web service with one worker on uvicorn.
