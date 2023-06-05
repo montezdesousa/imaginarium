@@ -11,13 +11,12 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
-# Load secrets
-RUN --mount=type=secret,id=_env,dst=/etc/secrets/.env cat /etc/secrets/.env
-COPY /env/secrets/.env ./engine
-RUN ls engine
-
 # Install production dependencies.
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Load secrets
+RUN --mount=type=secret,id=_env,dst=./.env cat ./.env
+RUN ls
 
 # Train the model
 RUN ["python", "-m", "engine.train_knn"]
