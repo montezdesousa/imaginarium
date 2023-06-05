@@ -3,8 +3,9 @@ from typing import Dict, List
 import sqlalchemy as db
 from dotenv import load_dotenv
 
-# current_dir = os.path.abspath(os.path.dirname(__file__))
+current_dir = os.path.abspath(os.path.dirname(__file__))
 # load_dotenv(os.path.join(current_dir, '.env'))
+load_dotenv(os.path.join(current_dir, "etc", "secrets", ".env"))
 
 print("DB credentials")
 DB_USER = os.getenv("DB_USER")
