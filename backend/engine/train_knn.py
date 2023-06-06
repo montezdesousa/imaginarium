@@ -28,9 +28,9 @@ def train_and_pickle(X, file, n_neighbors=20, n_jobs=8, algorithm="ball_tree"):
 if __name__ == "__main__":
     table = sys.argv[1] if len(sys.argv) > 1 else "master_db"
     print(f"Training started for table {table}.")
-    X = get_all_convolution(table, 500)
+    X = get_all_convolution(table, 50)
     start = time.time()
-    train_and_pickle(X, f"knn_{table}.pkl", n_neighbors=200)
+    train_and_pickle(X, f"knn_{table}.pkl", n_neighbors=20)
     end = time.time()
     elapsed = end - start
     print(f"Training complete {elapsed}.")

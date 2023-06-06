@@ -6,18 +6,11 @@ from dotenv import load_dotenv
 current_dir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(current_dir, '.env'))
 
-print("DB credentials")
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_ADDRESS = os.getenv("DB_ADDRESS")
 DB_PORT = os.getenv("DB_PORT")
 DB_NAME = os.getenv("DB_NAME")
-
-print(DB_USER)
-print(DB_PASS)
-print(DB_ADDRESS)
-print(DB_PORT)
-print(DB_NAME)
 
 class Session:
     engine = None
