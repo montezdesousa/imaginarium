@@ -1,6 +1,6 @@
 # Imaginarium
 
-Imaginarium is a reverse image search engine. Wut? It is basically a cheap version of Google Lens.
+Imaginarium is a reverse image search engine. Wut? It is basically a tiny Google Lens.
 
 The engine receives an image hosted on the web and searches similar images on the archive database.
 
