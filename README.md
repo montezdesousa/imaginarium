@@ -22,4 +22,6 @@ The engine extracts the image features.
 
 It returns the most similar images in the database.
 
+No metadata was provided to the model, so results can be funny :)
+
 [![imaginarium](https://img.youtube.com/vi/dwebaxpzBGo/0.jpg)](https://www.youtube.com/watch?v=dwebaxpzBGo)
