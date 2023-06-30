@@ -22,8 +22,8 @@ The engine extracts the image features.
 
 It returns the most similar images in the database.
 
-No metadata was provided to the model, so results can be funny :)
+No metadata was provided to the model, so results can be funny.
 
-This is a video with some examples:
+This is a video with some examples and a reference to Harry Potter [pensieve](https://harrypotter.fandom.com/wiki/Pensieve) which inspired the website design.
 
 [![imaginarium](https://img.youtube.com/vi/dwebaxpzBGo/0.jpg)](https://www.youtube.com/watch?v=dwebaxpzBGo)
