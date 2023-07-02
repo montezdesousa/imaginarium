@@ -1,6 +1,6 @@
 # Imaginarium
 
-[Imaginarium](https://imaginarium.pages.dev/?q=https%3A%2F%2Fhonda-automoveis.pt%2Fblog%2Fwp-content%2Fuploads%2F2020%2F05%2FHonda-S500-884x552.jpg) is a reverse image search engine. Wut? It is basically a tiny Google Lens.
+[Imaginarium](https://imaginarium.pages.dev/?q=https%3A%2F%2Fhonda-automoveis.pt%2Fblog%2Fwp-content%2Fuploads%2F2020%2F05%2FHonda-S500-884x552.jpg) is a reverse image search engine. Wut? It is basically a tiny Google Lens for [Arquivo.pt](https://arquivo.pt).
 
 The engine receives an image hosted on the web and searches similar images on the archive database.
 
@@ -21,6 +21,8 @@ You paste any image hyperlink.
 The engine extracts the image features.
 
 It returns the most similar images in the database.
+
+If you click the image you can see the source, i.e. the archived page where the image lives.
 
 No metadata was provided to the model, so results can be funny.
 
